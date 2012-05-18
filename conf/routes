@@ -3,7 +3,11 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+GET      /                              controllers.Application.index()
+GET      /words/                        controllers.Application.words()
+GET      /words/:id                     controllers.Application.word(id: Long)
+POST     /words/                        controllers.Application.newWord()
+POST     /words/:id/delete              controllers.Application.deleteWord(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

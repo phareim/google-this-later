@@ -1,7 +1,31 @@
-@(message: String)
+@(words: List[Word], wordForm: Form[Word])
 
-@main("Welcome to Play 2.0") {
+@import helper._
+
+@main("My Word list") {
     
-    @play20.welcome(message, style = "Java")
+    <h1>@words.size() word(s)</h1>
+    
+    <ul>
+        @for(word <- words) {
+            <li>
+                @word.label
+                
+                @form(routes.Application.deleteWord(word.id)) {
+                    <input type="submit" value="Delete">
+                }
+            </li>
+        }
+    </ul>
+    
+    <h2>Add a new word</h2>
+    
+    @form(routes.Application.newWord()) {
+        
+        @inputText(wordForm("label")) 
+        
+        <input type="submit" value="Create">
+        
+    }
     
 }
