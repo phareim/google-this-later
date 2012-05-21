@@ -1,0 +1,14 @@
+.inline-button {
+	font-weight:bold;
+	padding: 10px 10px 10px 10px;
+	display:inline;
+}
+
+ul {
+	list-style-type:none;
+}
+
+.big-input{
+	font-weight:bold;
+	padding: 10px 10px 10px 0px;
+}
